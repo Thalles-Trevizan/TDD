@@ -13,15 +13,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_city")
 public class City {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	
+
 	@OneToMany(mappedBy = "city")
 	private List<Event> events = new ArrayList<>();
-	
+
 	public City() {
 	}
 
@@ -29,7 +29,7 @@ public class City {
 		this.id = id;
 		this.name = name;
 	}
-	
+
 	public City(City entity) {
 		this.id = entity.getId();
 		this.name = entity.getName();

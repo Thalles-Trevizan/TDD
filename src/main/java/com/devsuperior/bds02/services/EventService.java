@@ -43,7 +43,8 @@ public class EventService {
 		entity.setUrl(dto.getUrl());
 
 		Optional<City> obj = cityRepository.findById(dto.getCityId());
-		City cityEntity = obj.orElseThrow(() -> new ResourceNotFoundException("ID " + dto.getCityId() + " da cidade não encontrado"));
+		City cityEntity = obj.orElseThrow(
+				() -> new ResourceNotFoundException("ID " + dto.getCityId() + " da cidade não encontrado"));
 
 		entity.setCity(new City(cityEntity));
 	}
