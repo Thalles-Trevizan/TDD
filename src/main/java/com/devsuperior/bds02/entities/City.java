@@ -29,6 +29,11 @@ public class City {
 		this.id = id;
 		this.name = name;
 	}
+	
+	public City(City entity) {
+		this.id = entity.getId();
+		this.name = entity.getName();
+	}
 
 	public Long getId() {
 		return id;
